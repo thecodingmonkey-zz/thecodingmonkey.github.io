@@ -3,10 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <title>Andrew Wong's Web Site</title>
+  <link rel="stylesheet" type="text/css" href="./css/slider-pro.min.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>
 <body>
-  <h2>You have stumbled upon Andrew Wong's webpage.</h2>
+  <h1>Andrew Wong</h1>
+  <h2>Full Stack Developer</h2>
 
-  <p>For my webpage when I was at the IDLAB, click <a href="http://www.phys.hawaii.edu/~idlab/">here.</a></p>
+<!--   <p>For my webpage when I was at the IDLAB, click <a href="http://www.phys.hawaii.edu/~idlab/">here.</a></p>
+ -->
+  <div id="projects" class="slider-pro">
+    <div class="sp-slides">
+
+      <div class="sp-slide">
+        <img class="sp-image" src="./css/images/blank.gif" 
+          data-src="./images/splash/starfox.png"/>
+ 
+        <p class="sp-layer sp-black sp-padding"
+          data-horizontal="180" data-vertical="50"
+          data-show-transition="left" data-show-delay="600">
+          StarFox Galaxies Travel is a SCSS styling exercise done while I was in DevLeague.
+        </p>
+      </div>
+
+      <div class="sp-slide">
+        <img class="sp-image" src="./css/images/blank.gif" 
+          data-src="./images/splash/psec3.png"/>
+ 
+        <h1 class="sp-layer sp-black sp-padding"
+          data-horizontal="180" data-vertical="50"
+          data-show-transition="left" data-show-delay="600">
+          Instrument Development Lab
+        </h1>
+      </div>
+
+
+
+    </div>
+
+    <div class="sp-thumbnails">
+      <img class="sp-thumbnail" src="./images/icon/starfox.png"/>
+      <img class="sp-thumbnail" src="./images/icon/chip.png"/>
+
+    </div>
+  </div>
+
+  <footer>
+  <p>Contact info:</p>
+  <p><a href="mailto:contact(at)thecodingmonkey.io">email</a>
+
+  </footer>
+
+<script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="./js/jquery.sliderPro.min.js"></script>
+<script type="text/javascript">
+  $( document ).ready(function( $ ) {
+    $( '#projects' ).sliderPro({
+      width: 700,
+      height: 700,
+      fade: true,
+      arrows: true,
+      buttons: false,
+      fullScreen: true,
+      shuffle: false,
+      smallSize: 500,
+      mediumSize: 1000,
+      largeSize: 3000,
+      thumbnailArrows: true,
+      autoplay: false
+    });
+  });
+</script>
+
+
 </body>
 </html>
