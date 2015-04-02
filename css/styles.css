@@ -1,6 +1,7 @@
 @import url('reset.css');
 
 @import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300);
 
 p.sp-layer {
   font-size: 32px;
@@ -16,10 +17,44 @@ h2 {
 
 h1, h2, footer {
   text-align: center;
-  font-family: 'Lora', serif;
-  padding: 0;
-  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  padding: 5px;
 }
+
+nav {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+nav li {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
+
+nav li a {
+  color: gray;
+  text-decoration: inherit;
+}
+
+nav li a:hover {
+  color: white;
+  text-decoration: inherit;
+}
+
+nav li:not(.first)::before {
+/*  content: '| ';
+  padding-
+*/}
 
 footer {
   /*margin: 0;*/

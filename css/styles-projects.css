@@ -1,0 +1,66 @@
+@import url('reset.css');
+
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
+
+
+div.project {
+  display: block;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+.left_col {
+  float: left;
+  width: 20%;
+}
+
+.right_col {
+  float: right;
+  width: 80%;
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+img {
+  display: inline-block;
+}
+
+h1 {
+  font-size: 2.0em;
+  display: inline-block;
+}
+
+h2 {
+  font-size: 2.0em;
+}
+
+h1, h2, footer {
+  text-align: center;
+  font-family: 'Lora', serif;
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+footer a {
+  color: gray;
+}
+
+body {
+  background-image: url("./../images/crossword.png");
+  background-repeat: repeat;
+}
