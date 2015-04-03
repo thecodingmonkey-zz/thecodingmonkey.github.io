@@ -1,7 +1,34 @@
 @import url('reset.css');
 
 @import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
-@import url(http://fonts.googleapis.com/css?family=Oswald:400,300);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
+div.project {
+  display: block;
+  max-width: 700px;
+}
+
+.left_col {
+  float: left;
+  /*width: 20%;*/
+}
+
+.right_col {
+  float: right;
+  /*width: 80%;*/
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+img {
+  display: inline-block;
+}
 
 p.sp-layer {
   font-size: 32px;
@@ -35,10 +62,30 @@ nav li {
   text-transform: uppercase;
   font-size: 1.5em;
   font-family: 'Oswald', sans-serif;
+  font-weight: 400;
   color: white;
   padding-left: 10px;
   padding-right: 10px;
 
+}
+
+.tech_stack:before {
+  content: 'Tech stack:\00a0';
+  font-weight: 700;
+
+}
+
+.tech_stack li {
+  display: inline-block;
+}
+
+.tech_stack li:not(:first-child)::before {
+  content: '\00a0\2022\00a0\00a0';
+}
+
+.tech_stack {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 nav li a {
@@ -71,4 +118,8 @@ footer a {
 body {
   background-image: url("./../images/crossword.png");
   background-repeat: repeat;
+
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+
 }
