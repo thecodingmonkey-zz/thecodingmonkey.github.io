@@ -1,1 +1,19 @@
-list.txt
+
+Overall
+  resume
+  linkedin link
+
+Personal Projects
+  OH HELL
+  Gashapon Web
+
+  (link)
+Physics lab
+  PSEC3
+
+Devleague
+  Todo-CRUD
+  Starfox?
+  Link to TEDx?
+  PixelPainter
+  Fastenate?
