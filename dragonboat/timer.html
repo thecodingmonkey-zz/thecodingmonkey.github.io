@@ -1,0 +1,132 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Dragon Boat Timer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="./jquery-latest.js"></script> 
+    <script type="text/javascript" src="./jquery.tablesorter.js"></script> -->
+    <script src='./stupidtable.min.js'></script>
+</head>
+<body>
+    <!--<form >-->
+        <div id="time">0:00:00</div>
+        <button id="start">START</button>
+
+        <p>
+        <input type="text" id="team1" value="Team 1"/><button id="team1finish">DONE</button>  <span id="team1time"></span>
+        </p>
+        <p>
+        <input type="text" id="team2" value="Team 2"/><button id="team2finish">DONE</button>  <span id="team2time"></span>
+        </p>
+        <p>
+        <input type="text" id="team3" value="Team 3"/><button id="team3finish">DONE</button>  <span id="team3time"></span>
+        </p>
+        
+        <p>
+            <button id="update">Add teams to leaderboard</button>
+        </p>
+
+        <table id="scoreboard" class="sortable" border="1px">
+            <thead>
+                <tr>
+                    <th data-sort="string" id="sort-me">Seconds</th>
+                    <th>Team Name</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    <!--</form>-->
+
+    <script>
+        startTime = new Date();
+
+        times = [0,0,0,0];
+
+        // $('#team1time').text("hello");
+        $('#start').click(
+            function(evt) {
+                startTime = new Date();
+            }
+        )
+
+        $('#team1finish').click(
+            function(evt) {
+                endTime = new Date();
+
+                delta = (endTime.getTime() - startTime.getTime())/1000;
+                $('#team1time').text( prettyTime(delta) );
+                times[1] = delta;
+            }
+        )
+
+        $('#team2finish').click(
+            function(evt) {
+                endTime = new Date();
+
+                delta = (endTime.getTime() - startTime.getTime())/1000;
+                $('#team2time').text( prettyTime(delta) );
+                times[2] = delta;
+            }
+        )
+
+        $('#team3finish').click(
+            function(evt) {
+                endTime = new Date();
+
+                delta = (endTime.getTime() - startTime.getTime())/1000;
+                $('#team3time').text( prettyTime(delta) );
+                times[3] = delta;
+            }
+        )
+
+        $('#update').click(
+            function(evt) {
+                teamNames = [
+                    '',
+                    $('#team1').val(),
+                    $('#team2').val(),
+                    $('#team3').val()
+                ];
+
+                addTeam(teamNames[1], times[1]);
+                addTeam(teamNames[2], times[2]);
+                addTeam(teamNames[3], times[3]);
+
+                $('#sort-me').click();
+
+                function addTeam(name, seconds) {
+                    $('#scoreboard tbody').append('<tr><td>' + prettyTime(seconds) + '</td><td>' + name + '</td><td>' + prettyTime(seconds) + '</td></tr>');
+                }
+            }
+        )
+
+        function prettyTime(num) {
+            var minutes = Math.floor(num/60);
+            var seconds = Math.floor(num % 60);
+            var milli = Math.floor((num - Math.floor(num)) * 1000); 
+            var milliText = ('000' + milli.toString()).substr(this.length - 3);
+            var secondsText = ('000' + seconds.toString()).substr(this.length - 2);
+
+            return minutes.toString() + ':' + secondsText + '.' + milliText;
+        }
+
+        function updateStartTime() {
+                endTime = new Date();
+
+                delta = (endTime.getTime() - startTime.getTime())/1000;
+                $('#time').text( prettyTime(delta) );            
+        }
+
+        $(document).ready( function() {
+            setInterval(updateStartTime, 33);
+
+            // $("#scoreboard").tablesorter( ); 
+            $('#scoreboard').stupidtable();
+          }
+        );
+       
+    </script>
+</body>
+</html>
